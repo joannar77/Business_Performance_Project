@@ -32,7 +32,7 @@ Business_Health_Analysis_v2.py — adds a division-by-zero safeguard for DTI and
 
 **How to Run**
 
-1. Install required packages 
+Install required packages
 Make sure you have Python 3.10+ installed, then install the necessary libraries:
 
 ```bash
@@ -40,14 +40,14 @@ pip install pandas matplotlib numpy
 Ensure dataset is available
 Place the dataset file Business_Financials_Data.csv in the same folder as the notebook or script.
 
-2. Run as a Jupyter Notebook
+Run as a Jupyter Notebook
 If you prefer to run the analysis interactively:
 
 bash
 Copy code
 jupyter notebook business_performance_analysis_notebook.ipynb
 
-3. Run as a Python script
+Run as a Python script
 If you want to execute the full pipeline as a script:
 
 bash
