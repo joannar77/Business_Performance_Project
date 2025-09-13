@@ -28,7 +28,7 @@ state_descriptive_stats.csv → aggregated financial health indicators at the st
 
 Business_Health_Analysis.py — initial version.
 
-Business_Health_Analysis_v2.py — adds a division-by-zero safeguard for DTI and refactors code for clarity/readability.
+Business_Health_Analysis_V2.py — adds a division-by-zero safeguard for DTI and refactors code for clarity/readability.
 
 **Tools & Skills Demonstrated**
 
