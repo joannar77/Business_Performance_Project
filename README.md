@@ -30,27 +30,6 @@ Business_Health_Analysis.py — initial version.
 
 Business_Health_Analysis_v2.py — adds a division-by-zero safeguard for DTI and refactors code for clarity/readability.
 
-**How to Run**
-
-**1. Install required packages**  
-Make sure you have Python 3.10+ installed, then install the necessary libraries:
-
-```bash
-pip install pandas matplotlib numpy
-
-2. Ensure dataset is available
-Place the dataset file Business_Financials_Data.csv in the same folder as the notebook or script.
-
-3. Run as a Jupyter Notebook
-If you prefer to run the analysis interactively:
-
-jupyter notebook business_performance_analysis_notebook.ipynb
-
-4. Run as a Python script
-If you want to execute the full pipeline as a script:
-
-python Business_Health_Analysis_v2.py
-
 **Tools & Skills Demonstrated**
 
 Python (pandas, matplotlib) for data cleaning, transformation, and visualization.
