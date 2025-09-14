@@ -285,7 +285,6 @@ print(avg_dti_by_state.head(5))
 print("\nBottom 5 states by Avg DTI:")
 print(avg_dti_by_state.tail(5))
 
-
 # 9d - Risk-Colored Scatterplot and Risk Tiers for Risk Management Policy
 # 
 # **Purpose:**
