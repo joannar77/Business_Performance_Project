@@ -19,7 +19,7 @@ Visualized relationships between profitability and leverage.
 **Data Pipeline and Flowchart**
 
 Data_Pipeline.py follows the Data_Pipeline_Flowchart.png
-(import → validate → clean → calculate → flag → aggregate → export)
+(import → validate → clean → calculate → flag → aggregate → export).
 
 **Decision Flowchart**
 
