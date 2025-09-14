@@ -21,6 +21,8 @@ Visualized relationships between profitability and leverage.
 Data_Pipeline.py follows the Data_Pipeline_Flowchart.png
 (import → validate → clean → calculate → flag → aggregate → export).
 
+![Data_Pipeline_Flowchart](https://github.com/joannar77/Business_Performance_Project/blob/main/Data_Pipeline_Flowchart.png)
+
 **Decision Flowchart**
 
 The following flowchart illustrates the classification logic used in the Revenue vs. Profit Margin Matrix. It defines thresholds, handles outliers, and shows how businesses are categorized into Stars, Volume Players, Niche Winners, and Strugglers.
