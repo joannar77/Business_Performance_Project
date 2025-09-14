@@ -48,6 +48,24 @@ Companies are classified into four groups (STARS, VOLUME PLAYERS, NICHE WINNERS,
 ***Stars — Revenue with Profit Portion***
    Highlights top "STAR" companies, showing revenue bars with profit dollars overlaid, including profit margin labels.  
    ![Stars Revenue with Profit Portion](Star_Businesses.png)
+
+**Average Debt‑to‑Income by State:** Shows the mean DTI for each state and highlights those with higher leverage.  
+  ![Average Debt to Income by State](https://github.com/joannar77/Business_Performance_Project/blob/main/Avg_DTI_by_State.png)
+
+***High Debt‑to‑Income (>50%):*** A horizontal bar chart of companies whose DTI exceeds 50%, with an 'X' marking those with negative equity.  
+  ![High Debt to Income](https://github.com/joannar77/Business_Performance_Project/blob/main/High_DTI.png)
+
+***Profit Margin vs. Debt‑to‑Income:*** Scatter plot of profitability vs DTI, with a trend line and annotations for companies that have negative equity.  
+  ![Profit Margin vs Debt to Income](https://github.com/joannar77/Business_Performance_Project/blob/main/PM_vs_DTI.png)
+
+***Risk‑colored Debt‑to‑Income vs. Profit Margin:*** Risk quadrants based on medians and an IQR‑based upper fence; points are colored by risk tier (low, medium, high).  
+  ![Risk Colored DTI vs PM](https://github.com/joannar77/Business_Performance_Project/blob/main/Risk_Colored_DTI_vs_PM.png)
+
+***DuPont Analysis – Profit Margin vs. Asset Turnover:*** Scatter plot showing how the interaction between profit margin and asset turnover affects return on equity.  
+  ![DuPont Analysis PM vs Asset Turnover](https://github.com/joannar77/Business_Performance_Project/blob/main/DuPont_Analysis_PM_vs_Asset_Turnover.png)
+
+***DuPont Analysis – Return on Equity vs. Debt‑to‑Equity:*** Illustrates how the capital structure (debt‑to‑equity ratio) relates to return on equity, with a trend line.  
+  ![DuPont Analysis Return on Equity vs DTE](https://github.com/joannar77/Business_Performance_Project/blob/main/DuPont_Analysis_Return_on_Equity_vs_DTE.png)
    
 **Tools & Skills Demonstrated**
 
