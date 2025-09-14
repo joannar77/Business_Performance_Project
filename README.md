@@ -31,7 +31,7 @@ The analysis includes a decision flowchart that illustrates how businesses are c
 
 ![Decision Flowchart](Decision_Flowchart.png)
 
-**Outputs**
+**Data Pipeline Outputs**
 
 `negative_debt_to_equity_businesses.csv` → list of high-risk businesses with negative equity.
 
