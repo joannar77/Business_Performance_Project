@@ -16,6 +16,11 @@ Aggregated results to generate state-level descriptive statistics.
 
 Visualized relationships between profitability and leverage.
 
+**Data Pipeline and Flowchart**
+
+Data_Pipeline.py follows the Data_Pipeline_Flowchart.png
+(import → validate → clean → calculate → flag → aggregate → export)
+
 **Decision Flowchart**
 
 The following flowchart illustrates the classification logic used in the Revenue vs. Profit Margin Matrix. It defines thresholds, handles outliers, and shows how businesses are categorized into Stars, Volume Players, Niche Winners, and Strugglers.
@@ -44,12 +49,6 @@ Companies are classified into four groups (STARS, VOLUME PLAYERS, NICHE WINNERS,
    Highlights top "STAR" companies, showing revenue bars with profit dollars overlaid, including profit margin labels.  
    ![Stars Revenue with Profit Portion](Star_Businesses.png)
    
-**Code Versions**
-
-Business_Health_Analysis.py — initial version.
-
-Business_Health_Analysis_V2.py — adds a division-by-zero safeguard for DTI and refactors code for clarity/readability.
-
 **Tools & Skills Demonstrated**
 
 Python (pandas, matplotlib) for data cleaning, transformation, and visualization.
