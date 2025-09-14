@@ -307,6 +307,8 @@ print(avg_dti_by_state.tail(5))
 
 # Scatterplot with risk levels (high-risk:red, medium-risk: orange, low-risk:green) 
 
+from matplotlib.transforms import blended_transform_factory
+
 # Build a clean plotting DataFrame
 dfp = df_combined.rename(columns={
     'Business ID'    : 'Business_ID',
@@ -525,8 +527,6 @@ print(
 # **Outputs:**  
 # - Horizontal bar chart  
 # - Supporting data table used for the chart  
-
-import matplotlib.patches as mpatches
 
 # Rebuild a clean plotting frame from df_combined
 if 'plot_df' not in globals():
