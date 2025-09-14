@@ -104,6 +104,9 @@ ax.set_title(r"$\bf{Decision\ Flow: Revenue\ vs. Profit\ Margin\ Matrix}$", pad=
 # roomy margins so nothing clips
 plt.subplots_adjust(left=0.04, right=0.98, top=0.93, bottom=0.05)
 
+# Save flowchart as PNG
+plt.savefig("decision_flowchart.png", dpi=200, bbox_inches="tight")
+
 plt.show()
 
 
