@@ -28,12 +28,22 @@ The analysis includes a decision flowchart that illustrates how businesses are c
 
 **Outputs**
 
-negative_debt_to_equity_businesses.csv → list of high-risk businesses with negative equity.
+`negative_debt_to_equity_businesses.csv` → list of high-risk businesses with negative equity.
 
-business_level_with_DTI.csv → cleaned dataset with DTI calculated for each business.
+`business_level_with_DTI.csv` → cleaned dataset with DTI calculated for each business.
 
-state_descriptive_stats.csv → aggregated financial health indicators at the state level.
+`state_descriptive_stats.csv` → aggregated financial health indicators at the state level.
 
+**Visualizations**
+
+***Revenue vs. Profit Margin — Quadrant Matrix***
+Companies are classified into four groups (STARS, VOLUME PLAYERS, NICHE WINNERS, STRUGGLERS) based on revenue and profit margin medians.  
+   ![Revenue vs Profit Margin Matrix](Revenue_vs_PM_Matrix.png)
+   
+***Stars — Revenue with Profit Portion***
+   Highlights top "STAR" companies, showing revenue bars with profit dollars overlaid, including profit margin labels.  
+   ![Stars Revenue with Profit Portion](Star_Businesses.png)
+   
 **Code Versions**
 
 Business_Health_Analysis.py — initial version.
