@@ -1,33 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[329]:
-
-
 import pandas as pd
-
-
-# In[331]:
-
 
 df = pd.read_csv('Business_Financials_Data.csv')
 
 
-# ## Step 1 - Preview the first few rows
-
-# In[332]:
-
-
-# Show the first few rows and all column names for a quick schema check
+# Step 1 - Preview the first few rows
 print(df.head())
 print("Columns:", df.columns.tolist())
 
 
-# ## Step 2 - Check columns
-
-# In[333]:
-
-
+# Step 2 - Check columns
 # Define the required schema for this analysis
 required_col = ["Business ID",
                 "Business State", 
@@ -44,25 +28,18 @@ for col in required_col:
         print(col, "is missing!")
 
 
-# ## Step 3 - ID Missing Values
-
-# In[334]:
-
-
+# Step 3 - ID Missing Values
 # Count and print the number of rows remaining after cleaning. Drop rows with missing values across all required fields
 df_clean = df.dropna()
 print(f"Rows after cleaning: {len(df_clean)}")
 
 
-# ## Step 4 - Check for Duplicate Rows
-# 
+# Step 4 - Check for Duplicate Rows
 # Detect duplicates. If they exist, display them for review.  
 # The script will stop for review of duplicates before continuing.
 
-# In[335]:
-
-
 # Identify duplicate rows in the cleaned dataset
+
 dups = df_clean[df_clean.duplicated()]
 
 if not dups.empty: 
@@ -76,34 +53,25 @@ else:
     print("No duplicate rows found.")
 
 
-# ## Step 5a - Calculate Debt-to-Income Ratio
-# 
-# Calculate Debt to Income Ratio for each business and calculate the Debt-to-Income ratio using a formula (DTI = Total Long-term Debt ÷ Total Revenue)
-# This metric helps assess a company's leverage relative to its income. A higher DTI may indicate greater financial ris.
-# 
+# Step 5 - Calculate Debt-to-Income Ratio
 
-# In[336]:
+# Step 5a — Compute DTI with divide-by-zero safeguard
+dti_val = []
+for _, row in df_clean.iterrows():
+    if row["Total Revenue"] == 0:
+        dti_val.append(0)
+    else:
+        dti_val.append(row["Total Long-term Debt"] / row["Total Revenue"])
 
+# Step 5b — Create DTI dataframe and preview
+dti_df = pd.DataFrame({
+        "Business ID": df_clean["Business ID"].values,
+        "DebtToIncome": dti_val
+})
+print(dti_df.head())
 
-# Create a new dataframe for Debt-to-Income ratios
-dti_df = pd.DataFrame()
-
-# Keep the Business ID
-dti_df["Business ID"] = df_clean["Business ID"]
-
-# DTI Calculation: Long-term Debt divided by Total Revenue
-dti_df["DebtToIncome"] = df_clean["Total Long-term Debt"] / df_clean["Total Revenue"]
-
-# Preview the first few results
-print(dti_df.head()) #print the first few rows of Debt-to_Income dti_df 
-
-
-# ## Step 5b - Merge Debt-to-Income Back into original data
-# 
+# Step 5c - Merge Debt-to-Income Back into original data
 # Concatenation creates a combined dataframe (`df_combined`) that includes all original fields plus the DTI column.
-
-# In[337]:
-
 
 # Concatenate the new DTI dataframe back to the cleaned data
 df_combined = pd.concat([df_clean, dti_df["DebtToIncome"]], axis=1)
@@ -117,13 +85,8 @@ print("Debt-to-Income column added (via separate dataframe + concat):")
 print(df_combined.head())
 
 
-# ## Step 6 - Identify Businesses with Negative Debt-to-Equity
-# 
+# Step 6 - Identify Businesses with Negative Debt-to-Equity
 # A negative Debt-to-Equity ratio usually means that liabilities exceed assets, or the business has accumulated losses that exceed equity.
-
-# In[338]:
-
-
 # Filter rows with negative Debt-to_Equity
 
 # Create a subset where Debt-to-Equity < 0
@@ -133,9 +96,8 @@ print("Businesses with NEGATIVE Debt-to-Equity ratios:")
 # Display the results
 print(neg_dte)
 
+# Step 7 - State-Level Descriptive Statistics
 
-# ## Step 7 - State-Level Descriptive Statistics
-# 
 # **Purpose:**
 # 
 # To understand the data geographically, group the data by State and calculate descriptive statistics for each column.
@@ -145,9 +107,6 @@ print(neg_dte)
 # Descriptive Statistics help identify states with higher average leverage, profitability ranges, 
 # and overall variability in financial healh. 
 # 
-
-# In[339]:
-
 
 # Group by State and calculate descriptive statistics 
 
@@ -167,16 +126,14 @@ print("State-level descriptive statistics:")
 print(agg_results.head())
 
 
-# ## Step 8 - Export Results to CSV
-# 
+# Step 8 - Export Results to CSV
+#
 # Save cleaned and enriched datasets to CSV files for further analysis and reporting:
 # 
 # 1. Businesses with Negative Debt-to-Equity - `negative_debt_to_equity_businesses.csv`  
 # 2. Business-level data - `business_level_with_DTI.csv`  
 # 3. State-level descriptive statistics - `state_descriptive_stats.csv`  
-
-# In[340]:
-
+#
 
 # Save all 3 files to CSV
 
@@ -191,26 +148,18 @@ agg_results.to_csv("state_descriptive_stats.csv")
 
 print("Analysis complete.")
 
-
-# ## Step 9 - Visualizations
+# Step 9 - Visualizations
 # 
 # In this step, I visualize leverage vs profitability and surface state-level leverage patterns.
 # Each plot has a short interpretation directly below it
 # 
 
-# ### 9a - Setup for Visualizations
-
-# In[341]:
-
+# 9a - Setup for Visualizations
 
 # Imports for plotting in Step 9
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
-
-
-# In[342]:
-
 
 # Make a copy with easy-to-type column names
 dfp = df_combined.rename(columns={
@@ -225,14 +174,8 @@ dfp = df_combined.rename(columns={
 plot_df = dfp[['Business_ID', 'Business_State',
                'Debt_to_Income', 'Profit_Margin', 'Debt_to_Equity']].dropna()
 
-
-# ### 9b - Scatterplot of Profit Margin vs Debt-to-Income
+# 9b - Scatterplot of Profit Margin vs Debt-to-Income
 # This chart examines whether profitability is related to Debt to Income (DTI) ratio.
-# 
-# 
-
-# In[343]:
-
 
 import numpy as np
 from matplotlib.ticker import PercentFormatter
@@ -304,11 +247,7 @@ ax.legend(loc='upper left', bbox_to_anchor=(1, 1), borderaxespad=0., frameon=Fal
 
 plt.show()
 
-
 # Below is a supporting table showing businesses with negative Debt to Equity.
-
-# In[344]:
-
 
 # Filter rows with negative Debt-to-Equity
 neg = dfp.loc[dfp['Debt_to_Equity'] < 0,
@@ -329,13 +268,8 @@ neg_styled = (
 neg_styled
 
 
-# ### 9c - Bar Chart - Average Debt-to-Income by State
+# 9c - Bar Chart - Average Debt-to-Income by State
 # This chart shows which states have higher average leverage levels.
-
-# In[345]:
-
-
-# Bar chart — Average Debt-to-Income (DTI) by State
 
 # Compute mean DTI per state and sort in a descending order
 avg_dti_by_state = (
@@ -367,7 +301,7 @@ print("\nBottom 5 states by Avg DTI:")
 print(avg_dti_by_state.tail(5))
 
 
-# ### 9d - Risk-Colored Scatterplot and Risk Tiers for Risk Management Policy
+# 9d - Risk-Colored Scatterplot and Risk Tiers for Risk Management Policy
 # 
 # **Purpose:**
 # 
@@ -386,9 +320,6 @@ print(avg_dti_by_state.tail(5))
 # **Outputs:**
 # 
 # A risk-colored scatter, CSVs by tier, and a short “Actionable Insights” summary
-
-# In[346]:
-
 
 # Scatterplot with risk levels (high-risk:red, medium-risk: orange, low-risk:green) 
 import numpy as np
@@ -549,7 +480,7 @@ print("- Top 5 by DTI (for immediate review):")
 print(top_dti.to_string(index=False))
 
 
-# ### 9e - Very-High DTI Outliers (Table)
+# 9e - Very-High DTI Outliers (Table)
 # 
 # **Purpose:**
 # 
@@ -559,9 +490,6 @@ print(top_dti.to_string(index=False))
 # **Outputs:**
 # 
 # CSV files for stakeholders
-
-# In[347]:
-
 
 # Which companies are "very high DTI" outliers?
 # (defined earlier as Debt_to_Income > dti_upper_fence)
@@ -596,12 +524,8 @@ if len(vh_lr):
     tbl_lr.to_csv("very_high_dti_highrisk_quadrant.csv", index=False)
 
 
-# ### 9e.1 - Table of High DTI Companies
-# 
+# 9e.1 - Table of High DTI Companies
 # HTML table showing high Debt to Income companies    
-
-# In[348]:
-
 
 tbl_style = (very_high[['Business_ID','Business_State','Debt_to_Income','Profit_Margin','Debt_to_Equity']]
              .rename(columns={'Debt_to_Income':'DTI','Profit_Margin':'PM'})
@@ -610,7 +534,7 @@ tbl_style = (very_high[['Business_ID','Business_State','Debt_to_Income','Profit_
 tbl_style
 
 
-# ### 9f - Companies with Debt-to-Income Above 50%
+# 9f - Companies with Debt-to-Income Above 50%
 # 
 # **Purpose:**  
 # Identify businesses where Equity < 0 (for immediate review) and Debt-to-Income exceeds 50%.
@@ -623,9 +547,6 @@ tbl_style
 # **Outputs:**  
 # - Horizontal bar chart  
 # - Supporting data table used for the chart  
-
-# In[349]:
-
 
 import numpy as np
 import pandas as pd
@@ -712,7 +633,7 @@ print(
 )
 
 
-# ### 9g - RETURN ON EQUITY (DuPont Analysis Visualization)
+# 9g - RETURN ON EQUITY (DuPont Analysis Visualization)
 # 
 # **Purpose:**
 # 
@@ -725,10 +646,7 @@ print(
 # - 9g.1 - Return on Equity vs. Debt to Equity Chart
 # - 9g.2 - Profit Margin vs. Asset Turnover Chart
 
-# ### 9g.1 - DuPont Analysis Chart 1 - Return on Equity vs. Debt to Equity Chart
-
-# In[350]:
-
+# 9g.1 - DuPont Analysis Chart 1 - Return on Equity vs. Debt to Equity Chart
 
 # Import necessary libraries
 import numpy as np
@@ -736,11 +654,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 
-
 # Make a working copy of the data
-
-# In[351]:
-
 
 dpdf = df_combined.copy()
 
@@ -751,12 +665,8 @@ dpdf = df_combined.copy()
 # 
 # - Net Income (Profit Margin * Total Revenue)
 
-# In[352]:
-
-
 dpdf['Total Assets'] = dpdf['Total Liabilities'] + dpdf['Total Equity']
 dpdf['Net Income'] = dpdf['Profit Margin'] * dpdf['Total Revenue']
-
 
 # DuPont Drivers Calculations
 
@@ -765,19 +675,12 @@ dpdf['Net Income'] = dpdf['Profit Margin'] * dpdf['Total Revenue']
 # ROE = Net Income ÷ Equity
 # ROA = Net Income ÷ Assets
 
-# In[320]:
-
-
 dpdf['Asset_Turnover'] = dpdf['Total Revenue'] / dpdf['Total Assets']
 dpdf['Equity_Mult'] = dpdf['Total Assets'] / dpdf['Total Equity']
 dpdf['ROE'] = dpdf['Net Income'] / dpdf['Total Equity']
 dpdf['ROA'] = dpdf['Net Income'] / dpdf['Total Assets']
 
-
 # Preview columns
-
-# In[321]:
-
 
 cols = ['Business ID','Business State','Total Assets','Net Income',
         'Asset_Turnover','Equity_Mult','ROE','ROA']
@@ -785,9 +688,6 @@ print(dpdf[cols].head())
 
 
 # Check if there are Null values in the newly created columns and print descriptive stats
-
-# In[322]:
-
 
 print(dpdf[['ROE','ROA','Asset_Turnover','Equity_Mult']].isna().sum())
 print()
@@ -842,10 +742,7 @@ plt.show()
 
 # Companies with higher debt have higher Return on Equity (when they have positive profits), but the higher the debt a company holds and the lower the margins, the harder the hit from a loss
 
-# ### 9g.2 - Profit Margin vs. Asset Turnover Chart DuPont Analysis Chart 2
-
-# In[325]:
-
+# 9g.2 - Profit Margin vs. Asset Turnover Chart DuPont Analysis Chart 2
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -875,36 +772,16 @@ plt.show()
 
 
 # Print Results of 10 top ROE companies
-
-# In[326]:
-
-
 top_ten = (dpdf).nlargest(10, 'ROE')[cols]
-
-
-# In[327]:
-
-
 print(top_ten.sort_values('ROE', ascending =False))
 
-
 # Print Results of 10 bottom  ROE companies
-
-# In[328]:
-
-
 bottom_ten = dpdf.nsmallest(10, 'ROE')[cols]
 print(bottom_ten.sort_values('ROE', ascending=False))
 
 
-# ### Interpretation of Chart 2 
-# 
+# Interpretation of Chart 2 
+#
 # A higher ROE indicates that a company utilizes shareholder investments more effectively. The interpretation will vary based on industry, and after applying appropriate benchmarking comparisons. 
 # 
 # Overall, companies can adjust Return on Equity by increasing profit margin or asset turnover, or a combination of both.
-
-# In[ ]:
-
-
-
-
