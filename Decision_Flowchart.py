@@ -52,7 +52,7 @@ axesbx = add_box(ax, (0.55, 0.75),
                  w=0.33, h=0.10, fc="#F0F8FF")
 
 thr = add_box(ax, (0.55, 0.55),
-              r"$\bf{Set\ Thresholds\ (Medians)}$" + "\nPM = 0.27\nRevenue = $89,685,500",
+              r"$\bf{Set\ Thresholds\ (Medians)}$" + "\nPM = 0.27\nRevenue = \$89,685,500",
               w=0.33, h=0.10, fc="#F0F8FF")
 
 cls = add_box(ax, (0.55, 0.35),
@@ -82,7 +82,7 @@ whylog = add_box(ax, (0.15, 0.44),
                  "• Values span ~10^4\n"
                  "• Preserves relative distances\n"
                  "• Prevents small firms from\n"
-                 "  vanishing next to $B+ firms",
+                 "  vanishing next to \$B+ firms",
                  w=0.24, h=0.10, fc="#C9DAEB")
 
 # Arrows
