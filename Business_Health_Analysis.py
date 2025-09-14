@@ -5,11 +5,9 @@ import pandas as pd
 
 df = pd.read_csv('Business_Financials_Data.csv')
 
-
 # Step 1 - Preview the first few rows
 print(df.head())
 print("Columns:", df.columns.tolist())
-
 
 # Step 2 - Check columns
 # Define the required schema for this analysis
@@ -105,7 +103,7 @@ print(neg_dte)
 # **Output:**
 # 
 # Descriptive Statistics help identify states with higher average leverage, profitability ranges, 
-# and overall variability in financial healh. 
+# and overall variability in financial health. 
 # 
 
 # Group by State and calculate descriptive statistics 
@@ -177,10 +175,6 @@ plot_df = dfp[['Business_ID', 'Business_State',
 # 9b - Scatterplot of Profit Margin vs Debt-to-Income
 # This chart examines whether profitability is related to Debt to Income (DTI) ratio.
 
-import numpy as np
-from matplotlib.ticker import PercentFormatter
-import matplotlib.pyplot as plt
-
 fig, ax = plt.subplots(figsize=(12, 7), dpi=150, constrained_layout=True)
 
 # Define the sizes of scatterplot points 
@@ -223,18 +217,20 @@ if len(xy) > 1:
 
 # Annotate negative Debt-to-Equity companies
 if neg_mask.any():
-    neg_df = plot_df[neg_mask].sort_values(['Debt_to_Income','Profit_Margin']).reset_index(drop=True)
+    neg_df = (plot_df[neg_mask]
+              .sort_values(['Debt_to_Income', 'Profit_Margin'])
+              .reset_index(drop=True))
     offsets = [(8, 8), (-8, 8), (8, -8), (-8, -8), (12, 0), (-12, 0)]
     for i, row in neg_df.iterrows():
         dx, dy = offsets[i % len(offsets)]
         ax.annotate(
-    f"Neg D/E - ID {row['Business_ID']}",
-    (row['Debt_to_Income'], row['Profit_Margin']),
-    xytext=(6, 6), textcoords='offset points',   
-    ha='left', va='bottom',                     
-    fontsize=9, color='0.2', alpha=0.8,
-    bbox=dict(boxstyle='round,pad=0.2', fc='white', ec='none', alpha=0.6)
-)
+            f"Neg D/E - ID {row['Business_ID']}",
+            (row['Debt_to_Income'], row['Profit_Margin']),
+            xytext=(dx, dy), textcoords='offset points',
+            ha='left', va='bottom',
+            fontsize=9, color='0.2', alpha=0.8,
+            bbox=dict(boxstyle='round,pad=0.2', fc='white', ec='none', alpha=0.6)
+        )
 
 # Add plot labels
 ax.set_xlabel('Debt-to-Income (LT Debt / Revenue)', fontsize=11, color='#3E5780')
@@ -253,21 +249,10 @@ plt.show()
 neg = dfp.loc[dfp['Debt_to_Equity'] < 0,
               ['Business_ID', 'Business_State', 'Debt_to_Income', 'Profit_Margin']].copy()
 
-# Display percentages
-neg_styled = (
-    neg.style
-       .format({'Debt_to_Income': '{:.1%}', 'Profit_Margin': '{:.1%}'})
-       .set_caption("Businesses with Negative Debt-to-Equity")
-       .set_table_styles([{
-           'selector': 'caption',
-           'props': [('font-size', '12pt'), ('text-align', 'left'),
-                     ('font-weight', 'bold'), ('color', '#333')]
-       }])
+print(
+    neg[['Business_ID', 'Business_State', 'Debt_to_Income', 'Profit_Margin']]
+      .to_string(index=False)
 )
-
-neg_styled
-
-
 # 9c - Bar Chart - Average Debt-to-Income by State
 # This chart shows which states have higher average leverage levels.
 
@@ -322,11 +307,6 @@ print(avg_dti_by_state.tail(5))
 # A risk-colored scatter, CSVs by tier, and a short “Actionable Insights” summary
 
 # Scatterplot with risk levels (high-risk:red, medium-risk: orange, low-risk:green) 
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib.ticker import PercentFormatter
-from matplotlib.transforms import blended_transform_factory
 
 # Build a clean plotting DataFrame
 dfp = df_combined.rename(columns={
@@ -527,12 +507,11 @@ if len(vh_lr):
 # 9e.1 - Table of High DTI Companies
 # HTML table showing high Debt to Income companies    
 
-tbl_style = (very_high[['Business_ID','Business_State','Debt_to_Income','Profit_Margin','Debt_to_Equity']]
-             .rename(columns={'Debt_to_Income':'DTI','Profit_Margin':'PM'})
-             .style.format({'DTI':'{:.1%}','PM':'{:.1%}'})
-             .set_caption("Very-High DTI Companies"))
-tbl_style
-
+print(
+    very_high[['Business_ID','Business_State','Debt_to_Income','Profit_Margin','Debt_to_Equity']]
+      .rename(columns={'Debt_to_Income':'DTI','Profit_Margin':'PM'})
+      .to_string(index=False)
+)
 
 # 9f - Companies with Debt-to-Income Above 50%
 # 
@@ -548,10 +527,6 @@ tbl_style
 # - Horizontal bar chart  
 # - Supporting data table used for the chart  
 
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib.ticker import PercentFormatter
 import matplotlib.patches as mpatches
 
 # Rebuild a clean plotting frame from df_combined
@@ -650,14 +625,12 @@ print(
 
 # Import necessary libraries
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 
 # Make a working copy of the data
 
 dpdf = df_combined.copy()
-
 
 # Create Columns: 
 # 
@@ -680,12 +653,14 @@ dpdf['Equity_Mult'] = dpdf['Total Assets'] / dpdf['Total Equity']
 dpdf['ROE'] = dpdf['Net Income'] / dpdf['Total Equity']
 dpdf['ROA'] = dpdf['Net Income'] / dpdf['Total Assets']
 
+# Replace infinite values (from division by zero in Equity or Assets) with NaN to prevent errors in calculations and plotting
+dpdf.replace([np.inf, -np.inf], np.nan, inplace=True)
+
 # Preview columns
 
 cols = ['Business ID','Business State','Total Assets','Net Income',
         'Asset_Turnover','Equity_Mult','ROE','ROA']
 print(dpdf[cols].head())
-
 
 # Check if there are Null values in the newly created columns and print descriptive stats
 
@@ -693,17 +668,9 @@ print(dpdf[['ROE','ROA','Asset_Turnover','Equity_Mult']].isna().sum())
 print()
 print(dpdf[['ROE','ROA','Asset_Turnover','Equity_Mult']].describe())
 
-
 # Before adding a trendline, make sure there are no Nans (trendlines break with Nans)
 
-# In[323]:
-
-
 clean_dpdf = dpdf[['Debt to Equity', 'ROE']].dropna()
-
-
-# In[324]:
-
 
 clean_dpdf = clean_dpdf[clean_dpdf['ROE'].between(-1,2)]
 clean_dpdf = clean_dpdf[clean_dpdf['Debt to Equity'].between(-1, 5)]
@@ -733,20 +700,15 @@ ax.yaxis.set_major_formatter(PercentFormatter(1))
 ax.grid(True, linestyle='--', alpha=0.3)
 ax.legend
 
-# Add Pearson Correlation
+# Add Spearman Correlation
 corr_s = clean_dpdf['Debt to Equity'].corr(clean_dpdf['ROE'], method='spearman')
 print(f"Spearman r = {corr_s:.2f}")
 plt.tight_layout()
 plt.show()
 
-
 # Companies with higher debt have higher Return on Equity (when they have positive profits), but the higher the debt a company holds and the lower the margins, the harder the hit from a loss
 
 # 9g.2 - Profit Margin vs. Asset Turnover Chart DuPont Analysis Chart 2
-
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.ticker import PercentFormatter
 
 # Mask rows to margins in [-100%, +60%]
 shrink_mask = dpdf['Profit Margin'].between(-1, 0.60)
@@ -770,7 +732,6 @@ ax.grid(True, linestyle='--', alpha=0.3)
 plt.tight_layout()
 plt.show()
 
-
 # Print Results of 10 top ROE companies
 top_ten = (dpdf).nlargest(10, 'ROE')[cols]
 print(top_ten.sort_values('ROE', ascending =False))
@@ -778,7 +739,6 @@ print(top_ten.sort_values('ROE', ascending =False))
 # Print Results of 10 bottom  ROE companies
 bottom_ten = dpdf.nsmallest(10, 'ROE')[cols]
 print(bottom_ten.sort_values('ROE', ascending=False))
-
 
 # Interpretation of Chart 2 
 #
