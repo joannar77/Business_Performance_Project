@@ -73,7 +73,7 @@ A horizontal bar chart of companies whose DTI exceeds 50%, with an 'X' marking t
 
 Scatter plot of profitability vs DTI, with a trend line and annotations for companies that have negative equity.  
 <p align="center">
-  <img src="figures/pm_vs_dti.png" alt="Profit Margin vs. Debt-to-Income" width="1100"/>
+  <img src="figures/pm_vs_dti.png" alt="Profit Margin vs. Debt-to-Income" width="1200"/>
 </p>
 
 ### Risk‑colored Debt‑to‑Income vs. Profit Margin:
