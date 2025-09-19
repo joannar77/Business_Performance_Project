@@ -68,7 +68,9 @@ Shows the mean DTI for each state and highlights those with higher leverage.
 **High Debt‑to‑Income (>50%):** 
 
 A horizontal bar chart of companies whose DTI exceeds 50%, with an 'X' marking those with negative equity.  
-  ![High Debt to Income](figures/high_dti.png)
+<p align="center">
+  <img src="figures/avg_dti_by_state.png" alt="Average Debt to Income by State" width="1200"/>
+</p>
 
 **Profit Margin vs. Debt‑to‑Income:** 
 
