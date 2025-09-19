@@ -58,7 +58,7 @@ Highlights top "STAR" companies, showing revenue bars with profit dollars overla
 
 Shows the mean DTI for each state and highlights those with higher leverage.  
 <p align="center">
-  <img src="figures/avg_dti_by_state.png" alt="Average Debt‑to‑Income by State" width="1100"/>
+  <img src="figures/avg_dti_by_state.png" alt="Average Debt‑to‑Income by State" width="900"/>
 </p>
 
 
