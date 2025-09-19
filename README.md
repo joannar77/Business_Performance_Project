@@ -27,8 +27,6 @@ data_pipeline.py follows the sata_pipeline_flowchart.png
 
 ![Data Pipeline Flowchart](figures/data_pipeline_flowchart.png)
 
----
-
 ## Data Pipeline Outputs
 
 `negative_debt_to_equity_businesses.csv` → list of high-risk businesses with negative equity.
