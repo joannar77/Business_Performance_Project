@@ -69,13 +69,6 @@ A horizontal bar chart of companies whose DTI exceeds 50%, with an 'X' marking t
   <img src="figures/high_dti.png" alt="High Debt-to-Income by State" width="1100"/>
 </p>
 
-### Profit Margin vs. Debt‑to‑Income:
-
-Scatter plot of profitability vs DTI, with a trend line and annotations for companies that have negative equity.  
-<p align="center">
-  <img src="figures/pm_vs_dti.png" alt="Profit Margin vs. Debt-to-Income" width="1200"/>
-</p>
-
 ### Risk‑colored Profit Margin vs. Debt-to-Income:
 
 Risk quadrants based on medians and an IQR‑based upper fence; points are colored by risk tier (low, medium, high).  
