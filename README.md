@@ -68,28 +68,37 @@ Shows the mean DTI for each state and highlights those with higher leverage.
 
 A horizontal bar chart of companies whose DTI exceeds 50%, with an 'X' marking those with negative equity.  
 <p align="center">
-  <img src="figures/high_dti.png" alt="High Debt-to_Income by State" width="1200"/>
+  <img src="figures/high_dti.png" alt="High Debt-to-Income by State" width="1200"/>
 </p>
 
 ### Profit Margin vs. Debt‑to‑Income:
 
 Scatter plot of profitability vs DTI, with a trend line and annotations for companies that have negative equity.  
-  ![Profit Margin vs Debt to Income](figures/pm_vs_dti.png)
+<p align="center">
+  <img src="figures/pm_vs_dti.png" alt="Profit Margin vs. Debt-to-Income" width="1200"/>
+</p>
 
 ### Risk‑colored Debt‑to‑Income vs. Profit Margin:
 
 Risk quadrants based on medians and an IQR‑based upper fence; points are colored by risk tier (low, medium, high).  
-  ![Risk Colored DTI vs PM](figures/risk_colored_dti_vs_pm.png)
+<p align="center">
+  <img src="figures/risk_colored_dti_vs_pm.png" alt="Risk Colored DTI vs PM" width="1200"/>
+</p>
 
 ### DuPont Analysis – Profit Margin vs. Asset Turnover:
 
 Scatter plot showing how the interaction between profit margin and asset turnover affects return on equity.  
-  ![DuPont Analysis PM vs Asset Turnover](figures/dupont_analysis_pm_vs_asset_turnover.png)
+<p align="center">
+  <img src="figures/dupont_analysis_pm_vs_asset_turnover.png" alt="DuPont Analysis PM vs Asset Turnover" width="1200"/>
+</p>
 
 ### DuPont Analysis – Return on Equity vs. Debt‑to‑Equity:
 
 Illustrates how the capital structure (debt‑to‑equity ratio) relates to return on equity, with a trend line.  
-  ![DuPont Analysis Return on Equity vs DTE](figures/dupont_analysis_return_on_equity_vs_dte.png)
+<p align="center">
+  <img src="figures/dupont_analysis_return_on_equity_vs_dte.png" alt="DuPont Analysis Return on Equity vs DTE" width="1200"/>
+</p>
+
 
 ---
    
