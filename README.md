@@ -66,14 +66,14 @@ Shows the mean DTI for each state and highlights those with higher leverage.
 
 A horizontal bar chart of companies whose DTI exceeds 50%, with an 'X' marking those with negative equity.  
 <p align="center">
-  <img src="figures/high_dti.png" alt="High Debt-to-Income by State" width="1100"/>
+  <img src="figures/high_dti.png" alt="High Debt-to-Income by State" width="900"/>
 </p>
 
 ### Risk‑colored Profit Margin vs. Debt-to-Income:
 
 Risk quadrants based on medians and an IQR‑based upper fence; points are colored by risk tier (low, medium, high).  
 <p align="center">
-  <img src="figures/risk_colored_dti_vs_pm.png" alt="Risk Colored DTI vs PM" width="800"/>
+  <img src="figures/risk_colored_dti_vs_pm.png" alt="Risk Colored DTI vs PM" width="900"/>
 </p>
 
 ### DuPont Analysis – Profit Margin vs. Asset Turnover:
