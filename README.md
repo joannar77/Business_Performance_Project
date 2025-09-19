@@ -1,8 +1,8 @@
-**Business Performance Analysis**
+# Business Performance Analysis**
 
 This project analyzes business financial health by examining debt ratios and profitability metrics. The goal is to identify high-risk companies, clean and structure raw data for analysis, and generate insights at both the company and state level.
 
-**Key Steps**
+## Key Steps
 
 Imported and validated raw business financial data.
 
@@ -16,14 +16,14 @@ Aggregated results to generate state-level descriptive statistics.
 
 Visualized relationships between profitability and leverage.
 
-**Data Pipeline and Flowchart**
+## Data Pipeline and Flowchart
 
 data_pipeline.py follows the sata_pipeline_flowchart.png
 (import → validate → clean → calculate → flag → aggregate → export).
 
 ![Data Pipeline Flowchart](figures/data_pipeline_flowchart.png)
 
-**Decision Flowchart**
+## Decision Flowchart
 
 The following flowchart illustrates the classification logic used in the Revenue vs. Profit Margin Matrix. It defines thresholds, handles outliers, and shows how businesses are categorized into Stars, Volume Players, Niche Winners, and Strugglers.
 
@@ -33,7 +33,7 @@ The analysis includes a decision flowchart that illustrates how businesses are c
 
 ![Decision Flowchart](figures/decision_flowchart.png)
 
-**Data Pipeline Outputs**
+## Data Pipeline Outputs
 
 `negative_debt_to_equity_businesses.csv` → list of high-risk businesses with negative equity.
 
@@ -41,35 +41,35 @@ The analysis includes a decision flowchart that illustrates how businesses are c
 
 `state_descriptive_stats.csv` → aggregated financial health indicators at the state level.
 
-**Visualizations**
+## Visualizations
 
-***Revenue vs. Profit Margin — Quadrant Matrix***
+**Revenue vs. Profit Margin — Quadrant Matrix**
 Companies are classified into four groups (STARS, VOLUME PLAYERS, NICHE WINNERS, STRUGGLERS) based on revenue and profit margin medians.  
    ![Revenue vs Profit Margin Matrix](figures/revenue_vs_pm_matrix.png)
    
-***Stars — Revenue with Profit Portion***
+**Stars — Revenue with Profit Portion**
    Highlights top "STAR" companies, showing revenue bars with profit dollars overlaid, including profit margin labels.  
    ![Stars Revenue with Profit Portion](figures/star_businesses.png)
 
 **Average Debt‑to‑Income by State:** Shows the mean DTI for each state and highlights those with higher leverage.  
   ![Average Debt to Income by State](figures/avg_dti_by_state.png)
 
-***High Debt‑to‑Income (>50%):*** A horizontal bar chart of companies whose DTI exceeds 50%, with an 'X' marking those with negative equity.  
+**High Debt‑to‑Income (>50%):** A horizontal bar chart of companies whose DTI exceeds 50%, with an 'X' marking those with negative equity.  
   ![High Debt to Income](figures/high_dti.png)
 
-***Profit Margin vs. Debt‑to‑Income:*** Scatter plot of profitability vs DTI, with a trend line and annotations for companies that have negative equity.  
+**Profit Margin vs. Debt‑to‑Income:** Scatter plot of profitability vs DTI, with a trend line and annotations for companies that have negative equity.  
   ![Profit Margin vs Debt to Income](figures/pm_vs_dti.png)
 
-***Risk‑colored Debt‑to‑Income vs. Profit Margin:*** Risk quadrants based on medians and an IQR‑based upper fence; points are colored by risk tier (low, medium, high).  
+**Risk‑colored Debt‑to‑Income vs. Profit Margin:** Risk quadrants based on medians and an IQR‑based upper fence; points are colored by risk tier (low, medium, high).  
   ![Risk Colored DTI vs PM](figures/risk_colored_dti_vs_pm.png)
 
-***DuPont Analysis – Profit Margin vs. Asset Turnover:*** Scatter plot showing how the interaction between profit margin and asset turnover affects return on equity.  
+**DuPont Analysis – Profit Margin vs. Asset Turnover:** Scatter plot showing how the interaction between profit margin and asset turnover affects return on equity.  
   ![DuPont Analysis PM vs Asset Turnover](figures/dupont_analysis_pm_vs_asset_turnover.png)
 
-***DuPont Analysis – Return on Equity vs. Debt‑to‑Equity:*** Illustrates how the capital structure (debt‑to‑equity ratio) relates to return on equity, with a trend line.  
+**DuPont Analysis – Return on Equity vs. Debt‑to‑Equity:** Illustrates how the capital structure (debt‑to‑equity ratio) relates to return on equity, with a trend line.  
   ![DuPont Analysis Return on Equity vs DTE](figures/dupont_analysis_return_on_equity_vs_dte.png)
    
-**Tools & Skills Demonstrated**
+## Tools & Skills Demonstrated 
 
 Python (pandas, matplotlib) for data cleaning, transformation, and visualization.
 
