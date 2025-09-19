@@ -76,7 +76,7 @@ Scatter plot of profitability vs DTI, with a trend line and annotations for comp
   <img src="figures/pm_vs_dti.png" alt="Profit Margin vs. Debt-to-Income" width="1200"/>
 </p>
 
-### Risk‑colored Debt‑to‑Income vs. Profit Margin:
+### Risk‑colored Profit Margin vs. Debt-to-Income:
 
 Risk quadrants based on medians and an IQR‑based upper fence; points are colored by risk tier (low, medium, high).  
 <p align="center">
