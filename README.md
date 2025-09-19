@@ -46,9 +46,12 @@ This flowchart outlines the decision logic behind the upcoming Revenue vs. Profi
 ![Decision Flowchart](figures/decision_flowchart.png)
 
 **Revenue vs. Profit Margin — Quadrant Matrix**
+
 Companies are classified into four groups (STARS, VOLUME PLAYERS, NICHE WINNERS, STRUGGLERS) based on revenue and profit margin medians.  
-<img src="figures/revenue_vs_pm_matrix.png" alt="Revenue vs Profit Margin Matrix" width="600"/>
-   
+<p align="center">
+  <img src="figures/revenue_vs_pm_matrix.png" alt="Revenue vs Profit Margin Matrix" width="600"/>
+</p>
+
 **Stars — Revenue with Profit Portion**
    Highlights top "STAR" companies, showing revenue bars with profit dollars overlaid, including profit margin labels.  
    ![Stars Revenue with Profit Portion](figures/star_businesses.png)
