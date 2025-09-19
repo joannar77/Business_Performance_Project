@@ -3,7 +3,7 @@
 
 import pandas as pd
 
-df = pd.read_csv('Business_Financials_Data.csv')
+df = pd.read_csv('business_financials_data.csv')
 
 # Step 1 - Preview the first few rows
 print(df.head())
