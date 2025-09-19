@@ -2,7 +2,7 @@
 # coding: utf-8
 """
 Business Health Analysis
-- Reads Business_Financials_Data.csv
+- Reads business_financials_data.csv
 - Validates columns
 - Cleans and dedupes
 - Computes Debt-to-Income (DTI)
