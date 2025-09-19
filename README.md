@@ -47,7 +47,7 @@ Companies are classified into four groups (Stars, Volume Players, Niche Winners,
   <img src="figures/revenue_vs_pm_matrix.png" alt="Revenue vs Profit Margin Matrix" width="650"/>
 </p>
 
-### Stars — Revenue with Profit Portion**
+### Stars — Revenue with Profit Portion
 
 Highlights top "STAR" companies, showing revenue bars with profit dollars overlaid, including profit margin labels.  
 <p align="center">
