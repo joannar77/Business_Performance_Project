@@ -30,8 +30,6 @@ The flowchart illustrates the end-to-end data pipeline, moving from raw input to
 
 `state_descriptive_stats.csv` → aggregated financial health indicators at the state level.
 
----
-
 # Visualizations
 
 ### Decision Flowchart
@@ -98,8 +96,6 @@ Illustrates how the capital structure (debt‑to‑equity ratio) relates to retu
 <p align="center">
   <img src="figures/dupont_analysis_return_on_equity_vs_dte.png" alt="DuPont Analysis Return on Equity vs DTE" width="1200"/>
 </p>
-
----
    
 # Tools & Skills Demonstrated 
 
