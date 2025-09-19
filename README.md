@@ -80,14 +80,14 @@ Risk quadrants based on medians and an IQR‑based upper fence; points are color
 
 Scatter plot showing how the interaction between profit margin and asset turnover affects return on equity.  
 <p align="center">
-  <img src="figures/dupont_analysis_pm_vs_asset_turnover.png" alt="DuPont Analysis PM vs Asset Turnover" width="1000"/>
+  <img src="figures/dupont_analysis_pm_vs_asset_turnover.png" alt="DuPont Analysis PM vs Asset Turnover" width="900"/>
 </p>
 
 ### DuPont Analysis – Return on Equity vs. Debt‑to‑Equity:
 
 Illustrates how the capital structure (debt‑to‑equity ratio) relates to return on equity, with a trend line.  
 <p align="center">
-  <img src="figures/dupont_analysis_return_on_equity_vs_dte.png" alt="DuPont Analysis Return on Equity vs DTE" width="1000"/>
+  <img src="figures/dupont_analysis_return_on_equity_vs_dte.png" alt="DuPont Analysis Return on Equity vs DTE" width="900"/>
 </p>
    
 # Tools & Skills Demonstrated 
