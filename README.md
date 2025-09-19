@@ -73,7 +73,7 @@ A horizontal bar chart of companies whose DTI exceeds 50%, with an 'X' marking t
 
 Risk quadrants based on medians and an IQR‑based upper fence; points are colored by risk tier (low, medium, high).  
 <p align="center">
-  <img src="figures/risk_colored_dti_vs_pm.png" alt="Risk Colored DTI vs PM" width="1100"/>
+  <img src="figures/risk_colored_dti_vs_pm.png" alt="Risk Colored DTI vs PM" width="900"/>
 </p>
 
 ### DuPont Analysis – Profit Margin vs. Asset Turnover:
