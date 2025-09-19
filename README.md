@@ -55,7 +55,7 @@ Companies are classified into four groups (STARS, VOLUME PLAYERS, NICHE WINNERS,
 **Stars — Revenue with Profit Portion**
    Highlights top "STAR" companies, showing revenue bars with profit dollars overlaid, including profit margin labels.  
 <p align="center">
-  <img src="figures/star_businesses.png" alt="Stars Revenue with Profit Portion" width="900"/>
+  <img src="figures/star_businesses.png" alt="Stars Revenue with Profit Portion" width="1000"/>
 </p>
 
 **Average Debt‑to‑Income by State:** Shows the mean DTI for each state and highlights those with higher leverage.  
