@@ -59,7 +59,10 @@ Highlights top "STAR" companies, showing revenue bars with profit dollars overla
 ### Average Debt‑to‑Income by State:
 
 Shows the mean DTI for each state and highlights those with higher leverage.  
-  ![Average Debt to Income by State](figures/avg_dti_by_state.png)
+<p align="center">
+  <img src="figures/avg_dti_by_state.png" alt="Average Debt‑to‑Income by State" width="1200"/>
+</p>
+
 
 ### High Debt‑to‑Income (>50%):
 
