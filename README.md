@@ -42,7 +42,7 @@ This flowchart outlines the decision logic behind the upcoming Revenue vs. Profi
   <img src="figures/decision_flowchart.png" alt="Decision Flowchart" width="750"/>
 </p>
 
-### Revenue vs. Profit Margin — Quadrant Matrix**
+### Revenue vs. Profit Margin — Quadrant Matrix
 
 Companies are classified into four groups (Stars, Volume Players, Niche Winners, Strugglers) based on revenue and profit margin medians.  
 <p align="center">
@@ -56,34 +56,34 @@ Highlights top "STAR" companies, showing revenue bars with profit dollars overla
   <img src="figures/star_businesses.png" alt="Stars Revenue with Profit Portion" width="1200"/>
 </p>
 
-### Average Debt‑to‑Income by State:** 
+### Average Debt‑to‑Income by State:
 
 Shows the mean DTI for each state and highlights those with higher leverage.  
   ![Average Debt to Income by State](figures/avg_dti_by_state.png)
 
-### High Debt‑to‑Income (>50%):** 
+### High Debt‑to‑Income (>50%):
 
 A horizontal bar chart of companies whose DTI exceeds 50%, with an 'X' marking those with negative equity.  
 <p align="center">
   <img src="figures/avg_dti_by_state.png" alt="Average Debt to Income by State" width="1200"/>
 </p>
 
-### Profit Margin vs. Debt‑to‑Income:** 
+### Profit Margin vs. Debt‑to‑Income:
 
 Scatter plot of profitability vs DTI, with a trend line and annotations for companies that have negative equity.  
   ![Profit Margin vs Debt to Income](figures/pm_vs_dti.png)
 
-### Risk‑colored Debt‑to‑Income vs. Profit Margin:** 
+### Risk‑colored Debt‑to‑Income vs. Profit Margin:
 
 Risk quadrants based on medians and an IQR‑based upper fence; points are colored by risk tier (low, medium, high).  
   ![Risk Colored DTI vs PM](figures/risk_colored_dti_vs_pm.png)
 
-### DuPont Analysis – Profit Margin vs. Asset Turnover:** 
+### DuPont Analysis – Profit Margin vs. Asset Turnover:
 
 Scatter plot showing how the interaction between profit margin and asset turnover affects return on equity.  
   ![DuPont Analysis PM vs Asset Turnover](figures/dupont_analysis_pm_vs_asset_turnover.png)
 
-### DuPont Analysis – Return on Equity vs. Debt‑to‑Equity:** 
+### DuPont Analysis – Return on Equity vs. Debt‑to‑Equity:
 
 Illustrates how the capital structure (debt‑to‑equity ratio) relates to return on equity, with a trend line.  
   ![DuPont Analysis Return on Equity vs DTE](figures/dupont_analysis_return_on_equity_vs_dte.png)
