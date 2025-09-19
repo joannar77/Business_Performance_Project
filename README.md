@@ -99,7 +99,6 @@ Illustrates how the capital structure (debt‑to‑equity ratio) relates to retu
   <img src="figures/dupont_analysis_return_on_equity_vs_dte.png" alt="DuPont Analysis Return on Equity vs DTE" width="1200"/>
 </p>
 
-
 ---
    
 # Tools & Skills Demonstrated 
