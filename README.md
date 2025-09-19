@@ -67,7 +67,7 @@ Companies are classified into four groups (STARS, VOLUME PLAYERS, NICHE WINNERS,
   ![DuPont Analysis PM vs Asset Turnover](figures/dupont_analysis_pm_vs_asset_turnover.png)
 
 ***DuPont Analysis – Return on Equity vs. Debt‑to‑Equity:*** Illustrates how the capital structure (debt‑to‑equity ratio) relates to return on equity, with a trend line.  
-  ![DuPont Analysis Return on Equity vs DTE](figures/dupont_analysis_return_on_eq.png)
+  ![DuPont Analysis Return on Equity vs DTE](figures/dupont_analysis_return_on_equity_vs_dte.png)
    
 **Tools & Skills Demonstrated**
 
