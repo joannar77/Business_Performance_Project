@@ -16,7 +16,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 
-CSV_PATH = "Business_Financials_Data.csv"
+CSV_PATH = "business_financials_data.csv"
 
 REQUIRED_COLS = [
     "Business ID", "Business State", "Total Long-term Debt", "Total Equity",
