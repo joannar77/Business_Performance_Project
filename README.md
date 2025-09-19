@@ -2,8 +2,6 @@
 
 This project analyzes business financial health by examining debt ratios and profitability metrics. The goal is to identify high-risk companies, clean and structure raw data for analysis, and generate insights at both the company and state level.
 
----
-
 ## Key Steps
 
 Imported and validated raw business financial data.
@@ -17,8 +15,6 @@ Flagged businesses with negative equity (negative D/E) as high-risk.
 Aggregated results to generate state-level descriptive statistics.
 
 Visualized relationships between profitability and leverage.
-
----
 
 ## Data Pipeline and Flowchart
 
