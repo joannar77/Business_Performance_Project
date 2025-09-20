@@ -1,6 +1,32 @@
 # Business Performance Analysis
 
-This project analyzes business financial health by examining debt ratios and profitability metrics. The goal is to identify high-risk companies, clean and structure raw data for analysis, and generate insights at both the company and state level.
+This project demonstrates an end-to-end financial data analysis pipeline, from raw data cleaning to executive-level visualizations. The goal was to evaluate company financial health across a large dataset, identify risk levels, and classify businesses into actionable categories for decision-making.
+
+# Problem
+
+Companies and investors need clear benchmarks to evaluate financial performance. Raw datasets often contain duplicates, missing values, and inconsistent formatting, making it difficult to extract insights.
+
+# Approach 
+
+Normalized raw financial CSV files
+
+Handled missing values and duplicates
+
+Built automated safeguards for division by zero and schema mismatches
+
+Calculated key ratios: Debt-to-Income, Profit Margin, Debt-to-Equity
+
+Aggregated performance by state and business segment
+
+Designed Policy for classification of businesses in the portfolio into four distinct quadrants based on performance (Profit Margin and Revenue)
+
+# Results 
+
+Created a reusable framework for financial benchmarking and portfolio risk assessment
+
+Delivered clear business-ready visualizations for executives and analysts
+
+Built a scalable pipeline to transform raw datasets into actionable insights
 
 ### Key Steps
 
