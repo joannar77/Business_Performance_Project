@@ -18,7 +18,7 @@ Calculated key ratios: Debt-to-Income, Profit Margin, Debt-to-Equity
 
 Aggregated performance by state and business segment
 
-Designed Policy for classification of businesses in the portfolio into four distinct quadrants based on performance (Profit Margin and Revenue)
+Designed a policy for classification of businesses in the portfolio into four distinct quadrants based on performance (Profit Margin and Revenue)
 
 # Results 
 
